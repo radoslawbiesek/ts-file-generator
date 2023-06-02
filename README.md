@@ -1,2 +1,3 @@
 # ts-file-generator
-ts-element-generator
+
+ts-file-generator
