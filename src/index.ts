@@ -1,6 +1,7 @@
 import { Argument, Command } from "commander";
 
 import { getConfig, getElement } from "./config";
+import { FileGenerator } from "./generator";
 
 const DEFAULT_CONFIG_PATH = "./tgconfig.cjs";
 
@@ -31,5 +32,6 @@ async function generate(
   const config = await getConfig(options.configPath);
   const element = getElement(type, config);
 
-  console.log(element, name);
+  const generator = new FileGenerator(element, name, options);
+  generator.generate();
 }
